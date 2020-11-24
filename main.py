@@ -28,15 +28,13 @@ def create_xml(host_list):
 
     return root
 
-
-if __name__ == '__main__':
+def get_devices():
     api = ZenossClient(host="http://zenoss.eltl.ru/", user="vikhor.m.g", passwd="Aa15162342")
     api.baseurl = 'http://zenoss.eltl.ru:8080/zport/dmd'
 
     endpoint = api.endpoint('device_router')
     action = endpoint.action('DeviceRouter')
     method = action.method('getDevices')
-
     devises = method(params={}, limit=1000)
 
     dev_list = list()
@@ -50,6 +48,11 @@ if __name__ == '__main__':
             groupName = groups[0]['name']
         dev_list.append((name, ip, groupName, state))
 
+    return dev_list
+
+
+if __name__ == '__main__':
+    dev_list = get_devices()
     print('total ' + str(len(dev_list)))
     create_xml(dev_list)
 
