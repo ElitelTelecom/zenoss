@@ -1,6 +1,6 @@
 <zabbix_export>
   <version>4.0</version>
-  <date>2019-02-26T12:35:52Z</date>
+  <date>_date_Y-m-dTH:M:SZ</date>
   <groups>
     <group>
       <name>Eltl NET</name>

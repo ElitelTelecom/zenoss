@@ -29,7 +29,7 @@
         <default>1</default>
         <type>1</type>
         <useip>1</useip>
-        <ip>172.16.200.214</ip>
+        <ip>_ip_</ip>
         <dns/>
         <port>10050</port>
         <bulk>1</bulk>
